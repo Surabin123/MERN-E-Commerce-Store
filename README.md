@@ -1,5 +1,12 @@
 # MERN E-Commerce Store — Fork
 
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express-111111?style=flat-square&logo=express&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+
+![Storefront and admin interface preview](thumb.png)
+
 This repository is a fork of [HuXn-WebDev/MERN-E-Commerce-Store](https://github.com/HuXn-WebDev/MERN-E-Commerce-Store), a tutorial-based MERN storefront. It contains a React/Vite client, Express API, and MongoDB models. Keep the upstream attribution and license terms; this fork should not be presented as wholly original work without clearly identifying your contributions.
 
 ## Implemented areas
@@ -31,7 +38,7 @@ The API listens on port `5000` by default. Vite proxies `/api/` and `/uploads/` 
 backend/       Express entry point, MongoDB config, controllers, models, middleware, routes
 frontend/      Vite + React pages, components, Redux state and API slices
 thumb.png      Tutorial thumbnail
-example-env.env  Environment-variable example (review placeholders before use)
+.env.example      Placeholder environment-variable reference
 ```
 
 ## Requirements and setup
@@ -49,7 +56,7 @@ JWT_SECRET=replace-with-a-long-random-secret
 PAYPAL_CLIENT_ID=your-sandbox-client-id
 ```
 
-The checked-in example file documents `PORT`, `MONGO_URI`, and `JWT_SECRET`. The API also reads `PAYPAL_CLIENT_ID` for its PayPal config endpoint, so add a sandbox client ID to your local ignored `.env` only if testing that flow. Do not place a PayPal secret in frontend code.
+The checked-in example file includes `PORT`, `MONGO_URI`, `JWT_SECRET`, and `PAYPAL_CLIENT_ID`. Replace every placeholder locally; use a PayPal sandbox client ID for local payment-flow exploration. Do not put a PayPal secret in frontend code.
 
 Install root dependencies from the repository root:
 
@@ -82,7 +89,7 @@ npm run build --prefix frontend
 npm run lint --prefix frontend
 ```
 
-The root `dev` script starts both services through `concurrently`; the broken command string has been corrected in this branch. The backend/frontend manifests do not define unit or integration test scripts. I have not run the install, lint, or build commands in this workspace.
+The root `dev` script starts both services through `concurrently`; the malformed command string is corrected in this branch. The backend and frontend manifests do not define unit or integration test scripts. Use the frontend build and lint commands above for the checks currently available.
 
 ## API surface
 
